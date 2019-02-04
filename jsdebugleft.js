@@ -13,6 +13,37 @@ function generateTextLeft(where, sentenceCount) {
 <!-- fm 6/18/7 -->
 
    <i>Welcome Bucci</i><br/>
+   
+   <form name = "myform" method="POST" action="javascript:go(document.myform.id.value);">
+
+<font size="4" color="#FF0000"><b><i>Pictures</i></b></font>
+
+<br>
+
+&nbsp;&nbsp;Search For:<br>
+
+&nbsp;&nbsp;<input name="id" type=text size=25 name=gg> 
+
+<br>
+
+&nbsp;&nbsp;<input type="button" value="Web! Search" onClick="javascript:go(document.myform.id.value);">
+
+<br>
+
+<i>
+
+<font size="1">
+
+Web images may be subject to copyright.  
+
+</font>
+
+</i>
+
+</form>   
+
+<hr></hr>
+
 
    <font size="4" color="#FF0000"><b><i>ABA Programs</i></b></font>
 
