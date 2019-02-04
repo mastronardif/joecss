@@ -3,7 +3,7 @@ function generateTextTop() {
 	if (1==1) {
 		document.write(
 `
-<form name = "myform" method="post" action="/cgi-bin/cgi/ngfop/top.pl">
+<form name = "myformtop" method="post" action="/cgi-bin/cgi/ngfop/top.pl">
 
 
 
@@ -71,7 +71,7 @@ function generateTextTop() {
 
            font-family: Verdana; font-size:12px;">
 
-	<OPTION VALUE="-1">List
+	<OPTION VALUE="-1">MiddleTest
 
 
 
@@ -122,7 +122,7 @@ function generateTextTop() {
 	</SELECT>
 
     <a class="menuitem" title="Execute a command" href="javascript:ShowExtra(document.myform.Extra.options[document.myform.Extra.selectedIndex].text);">Go!</a> 
-
+<a class="menuitem" title="Execute a command" href="javascript:testAjax(document.myformtop.Extra.options[document.myformtop.Extra.selectedIndex].text);">Go22!</a> 
 
 
       <!-- FM 6/26/8

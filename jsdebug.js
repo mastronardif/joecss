@@ -1,4 +1,22 @@
 
-var bodyText=["Remember, you are unique, just like everybody else.", "Too much agreement kills a good chat.", "Get your facts first, then you can distort them as you please.", "I intend to live forever. So far, so good.", "</p><p>A clear conscience is usually a sign of a bad memory.", "What's another word for Thesaurus?", "<h3>Heading</h3><p>Experience is something you don't get until just after you need it."]
 
 //alert('jsdebug.js');
+//testAjax();
+
+function testAjax(Area) {
+	//alert(Area);
+$.ajax({
+  url: "http://joeschedule.com/cgi-bin/cgi/ngfop/isch3b.pl?id=Visitor&pw=visitor&htmlname=isch3b.htm&name=sch116356388.xml", //"https://developers.google.com/speed/libraries/#jquery", //"/api/getWeather",
+  data: {
+    zipcode: 97201
+  },
+  success: function( result ) {
+    
+	//$( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+	if ('MiddleTest'=== Area) {
+		$( "#middle" ).html( "<strong>" + result + "</strong> degrees" );
+		//console.log(result);
+	}
+  }
+});	
+}
