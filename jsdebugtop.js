@@ -1,6 +1,7 @@
 function generateTextTop() {
-if (1==1) {
-document.write(
+//if (1==1) {
+//document.write
+return(
 `
 <form name = "myformtop" method="post" action="/cgi-bin/cgi/ngfop/top.pl">
 <input type="hidden" NAME="leftsrc" value="cb"/>
@@ -21,49 +22,19 @@ font-family: Verdana; font-size:12px;">
 <OPTION VALUE="-1">MiddleTest
 <OPTION VALUE="3">
 ----------
-<!--	<OPTION VALUE="3">*ijoepec -->
 <OPTION VALUE="4">Form
 <OPTION VALUE="1">Cards
 <OPTION VALUE="1">Reward
 <OPTION VALUE="1">Left2rt
 <OPTION VALUE="3">Story
 <OPTION VALUE="3">*Matching
-<!--
-<OPTION VALUE="3">ABA
-<OPTION VALUE="3">Pix(1)
-<OPTION VALUE="3">*Edit Pix(3)
-<OPTION VALUE="3">*Prnt Pix(3)
-<OPTION VALUE="3">Pix(3)
-<OPTION VALUE="3">*Folder for:
-<OPTION VALUE="3">*List ABA for:
-<OPTION VALUE="3">*List My ABA
-<OPTION VALUE="3">*Student Prgs
--->
-<OPTION VALUE="3">Add a Student
+
 </SELECT>
 <a class="menuitem" title="Execute a command" href="javascript:ShowExtra(document.myform.Extra.options[document.myform.Extra.selectedIndex].text);">Go!</a>
 <a class="menuitem" title="Execute a command" href="javascript:testAjax(document.myformtop.Extra.options[document.myformtop.Extra.selectedIndex].text);">Go22!</a>
-<!-- FM 6/26/8
-<a class="menuitem" title="pictures" href="javascript:ShowExtra('Pictures');">Pictures</a>
--->
-<!-- Calander related stuff -->
-<!--
-<SELECT NAME="People"
-style="color: navy; background: #C9E8FB; font-family: Verdana; font-size:12px;">
-<CALANDER_USERS>
-<OPTION VALUE="1"><NAME>
-</CALANDER_USERS>
-</SELECT>
-<SELECT NAME="date"
-style="color: navy; background: #C9E8FB; font-family: Verdana; font-size:12px;">
-<OPTION VALUE="-1">Day
-<OPTION VALUE="1">Week
-</SELECT>
-<a class="menuitem" onClick="ShowDate(document.myform.date.options[document.myform.date.selectedIndex].text);"
-title="Show Day or Week">Go! </a>
--->
-<!-- Calander related stuff -->
-<a class="menuitem" title="My Picture" href="javascript:myPicture();"><IMG SRC="/cgi/ngfop/ca1.gif" alt="My Picture" align="middle" width="23" height="15" border="1"></a>
+
+
+<a class="menuitem" title="My Picture" href="javascript:myPicture();"><IMG SRC="./toad.png" alt="My Picture" align="middle" width="23" height="25" border="1"></a>
 <a class="menuitem" title="copy left to right" href="javascript:cp2sch22();"><IMG SRC="/cgi/ngfop/rarrow1.gif" ALT="copy left to right" align="middle" width="23" height="15" border="1"></a>
 <a class="menuitem" title="Create a new schedule or choice board"
 href="/cgi-bin/cgi/ngfop/other2.pl?htmlname=editschframe.htm&name=blank.xml" target="right">New</a>
@@ -76,5 +47,5 @@ href="/cgi-bin/cgi/ngfop/other2.pl?htmlname=editschframe.htm&name=blank.xml" tar
 </table>
 </form>
 `);
-}
+//}
 }

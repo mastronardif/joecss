@@ -1,7 +1,8 @@
 
 function generateTextLeft(where, sentenceCount) {
-if (1==1) {
-document.write(`
+//if (1==1) {
+//document.write
+return(`
 <form name = "myform" method="post" action="/cgi-bin/cgi/ngfop/each.cgi">
 <!-- <font size="4" color="#FF0000"><b><i>My Schedules</i></b></font>
 -->
@@ -2086,5 +2087,5 @@ upper-case</A>
 <br>
 </form>
 `);
-}
+//}
 }

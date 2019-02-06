@@ -1,7 +1,8 @@
 	
 	function generateTextMiddle() {
-	if (1==1) {
-		document.write(
+//	if (1==1) {
+		//document.write(
+return(			
 `
 <form name = "myform" method="post" action="/cgi-bin/cgi/ngfop/each.cgi">
 
@@ -289,5 +290,5 @@
 <!-- hidden vars to force arrays -->
 </form>
 `);
-	}
+//	}
 }

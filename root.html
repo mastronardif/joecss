@@ -13,7 +13,7 @@
 <title>joecss</title>
 <link rel="stylesheet" type="text/css" href="root.css">
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 /* =============================
 This script generates sample text for the body content.
 You can remove this script and any reference to it.
@@ -23,29 +23,25 @@ function generateText(sentenceCount){
 for (var i=0; i<sentenceCount; i++)
 document.write(bodyText[Math.floor(Math.random()*7)]+" ")
 }
-</script>
+</script> -->
 </head>
 <body>
 <header id="header">
 <div class="innertube">
-<p><script>generateTextTop()</script>
-</p>
+    <div id="top"></div>
 </div>
 </header>
 <main>
 <div class="innertube">
 <div id="middle"></div>
-<p><script>generateTextMiddle()</script></p>
 </div>
 </main>
 <nav id="left">
 <div class="innertube">
-<p><script>generateTextLeft()</script></p>
 </div>
 </nav>
 <div id="right">
 <div class="innertube">
-<p><script>generateTextRight()</script></p>
 </div>
 </div>
 <footer id="footer">
@@ -54,4 +50,10 @@ document.write(bodyText[Math.floor(Math.random()*7)]+" ")
 </div>
 </footer>
 </body>
+<script>
+    $( "#top").html(generateTextTop());
+    $( "#left").html(generateTextLeft());
+    $( "#middle").html(generateTextMiddle());
+    $( "#right").html(generateTextRight());
+</script>
 </html>

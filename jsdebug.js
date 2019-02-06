@@ -14,7 +14,7 @@ $.ajax({
     
 	//$( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
 	if ('MiddleTest'=== Area) {
-		$( "#middle" ).html( "<strong>" + result + "</strong> degrees" );
+		$( "#middle" ).html( "<strong>" + result + "</strong>" );
 		//console.log(result);
 	}
   }
