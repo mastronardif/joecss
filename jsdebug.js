@@ -20,3 +20,43 @@ $.ajax({
   }
 });	
 }
+
+
+function testAjax22(url, area) {
+	//alert(area);return;
+$.ajax({
+  url: url,
+  data: {
+    zipcode: 97201
+  },
+  success: function( result ) {
+   // return result;
+	//$( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+	  if ('MiddleTest'=== area) {
+		  $( "#middle" ).html( "<strong>" + result + "</strong>" );
+    }
+  },
+  error: function (xhr, status, error) {
+    var err = status;
+    //var err = eval("(" + xhr.responseText + ")");
+    // var acc = []
+    // $.each(status, function(index, value) {
+    //     acc.push(index + ': ' + value);
+    // });
+    //var err=JSON.stringify(acc);
+    $( "#middle" ).html( '<span style="color:Red;">' + err + "</span>" );
+  }
+});	
+}
+
+function go(fn)
+{
+//alert("go "+fn); return;
+  //var str="/cgi-bin/cgi/ngfop/lwpyahoo.pl?jsquery="+fn
+  var str="http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.pl?jsquery="+fn;
+	// FM 6/18/8 parent.middle.location=str;
+   //top.frames[2].location=str;
+   testAjax22(str, 'MiddleTest');
+   //$( "#middle" ).html( testAjax22(str, 'MiddleTest') );
+
+}
