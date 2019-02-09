@@ -13,7 +13,7 @@ $.ajax({
   success: function( result ) {
     
 	//$( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
-	if ('MiddleTest'=== Area) {
+	if ('Middle'=== Area) {
 		$( "#middle" ).html( "<strong>" + result + "</strong>" );
 		//console.log(result);
 	}
@@ -32,7 +32,7 @@ $.ajax({
   success: function( result ) {
    // return result;
 	//$( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
-	  if ('MiddleTest'=== area) {
+	  if ('Middle'=== area) {
 		  $( "#middle" ).html( "<strong>" + result + "</strong>" );
     }
   },
@@ -56,7 +56,59 @@ function go(fn)
   var str="http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.pl?jsquery="+fn;
 	// FM 6/18/8 parent.middle.location=str;
    //top.frames[2].location=str;
-   testAjax22(str, 'MiddleTest');
+   testAjax22(str, 'Middle');
    //$( "#middle" ).html( testAjax22(str, 'MiddleTest') );
+
+}
+
+function dbg_getListItem(iii)
+
+{
+
+    return "\74picture>"+gStr+"\74/picture>";
+
+
+
+	var obj    = document.myform;
+
+
+
+	var str;
+
+
+
+	for (var iii = 0; iii < obj.elements.C1.length; iii++)
+
+	{
+
+		if (obj.elements.C1[iii].checked)
+
+		{
+
+			str = obj.elements.HR55[iii].value;
+
+
+
+			break;
+
+		}
+
+	}
+
+
+
+//	alert(gStr);
+
+
+
+
+
+    //return "\74picture>"+str+"\74/picture>";
+
+
+
+//alert("\74picture>"+str+"\74/picture>");
+
+//	return _listData[iii];
 
 }

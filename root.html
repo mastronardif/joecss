@@ -53,7 +53,10 @@ document.write(bodyText[Math.floor(Math.random()*7)]+" ")
 <script>
     $( "#top").html(generateTextTop());
     $( "#left").html(generateTextLeft());
-    $( "#middle").html(generateTextMiddle());
+    //$( "#middle").html(generateTextMiddle());
+    var str="http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.pl?jsquery="+'chalk';
+    testAjax22(str, 'Middle');
+
     $( "#right").html(generateTextRight());
 </script>
 </html>

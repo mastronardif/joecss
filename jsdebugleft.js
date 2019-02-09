@@ -9,7 +9,7 @@ return(`
 <!-- fm 6/18/7 -->
 <i>Welcome (Bucci)</i><br/>
 
-<form name = "myformL" method="POST" action="javascript:go(document.myform.id.value);">
+<form name = "myformL" method="POST" action="javascript:go(document.myformL.id.value);">
 <font size="4" color="#FF0000"><b><i>Pictures</i></b></font>
 <br>
 

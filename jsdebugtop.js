@@ -3,6 +3,29 @@ function generateTextTop() {
 //document.write
 return(
 `
+<script>
+function cp2sch22()
+{
+   //alert('j__top:cp2sch22()'); return;
+   alert(gStr); return;
+   if(!parent.middle.getListItem) return;
+
+   var szMid = parent.middle.getListItem();
+   if (szMid)
+   {
+		// Cheesy solution for the frames for iframe
+		if (parent.right.frames.length == 0)
+		{
+			parent.right.test(szMid);
+		}
+		else
+		{
+			parent.right.frames[1].test(szMid);
+		}
+   }
+}
+</script>
+
 <form name = "myformtop" method="post" action="/cgi-bin/cgi/ngfop/top.pl">
 <input type="hidden" NAME="leftsrc" value="cb"/>
 <input type="hidden" NAME="leftvalue" value="blank.xml"/>
@@ -19,12 +42,11 @@ return(
 <SELECT NAME="Extra"
 style="text-transform: uppercase; color: navy; background: #C9E8FB;
 font-family: Verdana; font-size:12px;">
-<OPTION VALUE="-1">MiddleTest
+<OPTION VALUE="-1">Middle
 <OPTION VALUE="3">
 ----------
 <OPTION VALUE="4">Form
 <OPTION VALUE="1">Cards
-<OPTION VALUE="1">Reward
 <OPTION VALUE="1">Left2rt
 <OPTION VALUE="3">Story
 <OPTION VALUE="3">*Matching
@@ -36,8 +58,7 @@ font-family: Verdana; font-size:12px;">
 
 <a class="menuitem" title="My Picture" href="javascript:myPicture();"><IMG SRC="./toad.png" alt="My Picture" align="middle" width="23" height="25" border="1"></a>
 <a class="menuitem" title="copy left to right" href="javascript:cp2sch22();"><IMG SRC="/cgi/ngfop/rarrow1.gif" ALT="copy left to right" align="middle" width="23" height="15" border="1"></a>
-<a class="menuitem" title="Create a new schedule or choice board"
-href="/cgi-bin/cgi/ngfop/other2.pl?htmlname=editschframe.htm&name=blank.xml" target="right">New</a>
+<a class="menuitem" title="Create a new schedule or choice board" href="/cgi-bin/cgi/ngfop/other2.pl?htmlname=editschframe.htm&name=blank.xml" target="right">New</a>
 <a class="menuitem" title="Edit" href="javascript:editSchedule2();" >Edit</a>
 <a class="menuitem" title="Delete" href="javascript:del();">Del</a>
 <a class="menuitem" title="Sign Out" href="javascript:top.location='/cgi-bin/cgi/ngfop/signin.pl?action=signout'">Sign Out</a>
