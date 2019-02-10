@@ -3,7 +3,8 @@ function generateTextRight() {
 //if (1==1) {
 //document.write
 return(
-`	<form name="myform" method="post" action="javascript:nothing('');">
+`	
+<form name="myformrighttop" method="post" action="javascript:nothing('');">
 <tr>
 <td align="center">
 <a class="menuitem" title="Save" href="javascript:save2('cb');"><IMG SRC="/cgi/ngfop/tick6.gif" alt="Save" width="23" height="20" border="0"	style="vertical-align: middle"></a>
@@ -233,7 +234,13 @@ return(
 </td>
 </tr>
 </table>
-</form>`
+</form>
+<script>
+function test(src) {
+    alert(document.myform[1].elements.length);//.R1);//.length);
+}
+</script>
+`
 );
 //}
 }

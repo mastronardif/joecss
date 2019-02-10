@@ -6,22 +6,26 @@ return(
 <script>
 function cp2sch22()
 {
-   //alert('j__top:cp2sch22()'); return;
-   alert(gStr); return;
-   if(!parent.middle.getListItem) return;
+   //if(!parent.middle.getListItem) return;   
+   if(!getListItem) return;
+   
 
-   var szMid = parent.middle.getListItem();
+   //var szMid = parent.middle.getListItem();
+   var szMid = getListItem();   
+   
    if (szMid)
    {
-		// Cheesy solution for the frames for iframe
-		if (parent.right.frames.length == 0)
-		{
-			parent.right.test(szMid);
-		}
-		else
-		{
-			parent.right.frames[1].test(szMid);
-		}
+	   test(szMid);
+
+	   // //Cheesy solution for the frames for iframe
+		// if (parent.right.frames.length == 0)
+		// {
+			// parent.right.test(szMid);
+		// }
+		// else
+		// {
+			// parent.right.frames[1].test(szMid);
+		// }
    }
 }
 </script>
