@@ -91,8 +91,8 @@ function go(fn)
   //var str="/cgi-bin/cgi/ngfop/lwpyahoo.pl?jsquery="+fn
   var str="http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.cgi?jsquery="+fn;
 	// FM 6/18/8 parent.middle.location=str;
-   //top.frames[2].location=str;
-   testAjax22(str, 'Middle');
+   //top.frames[2].location=str;   
+   testAjax33(str, $("#middle" ));
    //$( "#middle" ).html( testAjax22(str, 'MiddleTest') );
 
 }
