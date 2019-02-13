@@ -75,3 +75,18 @@ padding: 50px 200px 50px 200px; /* Set the first value to the height of the head
 height: 100%;
 width: 100%;
 }
+
+/**/
+.hover-item {
+	background-color: #FFF;
+}
+
+.hover-item:hover {
+    background-color: inherit;     
+}
+
+.mystyle {
+   
+    background-color: coral;
+    color: white;
+}

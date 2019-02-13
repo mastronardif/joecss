@@ -98,53 +98,47 @@ function go(fn)
 }
 
 function dbg_getListItem(iii)
-
 {
-
     return "\74picture>"+gStr+"\74/picture>";
-
-
-
-	var obj    = document.myform;
-
-
-
-	var str;
-
-
-
-	for (var iii = 0; iii < obj.elements.C1.length; iii++)
-
-	{
-
-		if (obj.elements.C1[iii].checked)
-
-		{
-
-			str = obj.elements.HR55[iii].value;
-
-
-
-			break;
-
-		}
-
-	}
-
-
-
-//	alert(gStr);
-
-
-
-
-
-    //return "\74picture>"+str+"\74/picture>";
-
-
-
-//alert("\74picture>"+str+"\74/picture>");
-
-//	return _listData[iii];
-
 }
+
+function notifytop(xml, name)
+{
+    alert('notifytop('+xml+', '+name);  
+}
+
+// top functions
+function myshowMiddle(id, href)
+{
+    var element = document.getElementById(id);
+    alert(href);
+    if (!href) {return;}
+
+    var str = "http://www.joeschedule.com"+ href;
+	  testAjax33(str, $("#middle" ));
+
+
+     //element.classList.toggle("mystyle");
+     //element.classList.toggle("hover-item:hover");
+
+    //   for (i = 1; i < 4; i++) { 
+    //       if (i != id) {         
+    //       element = document.getElementById(i);
+    //      // element.classList.toggle("hover-item:hover");
+    // //      //element.style.cssText ="color: blue; border: 1px solid black";
+    //       element.style.cssText =" background-color: black;";
+    //      }
+    //   }
+}
+
+// function getEventTarget(e) {
+//     e = e || window.event;
+//     return e.target || e.srcElement; 
+// }
+
+// var ul = document.getElementById('ulSchedules');
+// ul.onclick = function(event) {
+//     var target = getEventTarget(event);
+//     target.innerHTML && alert("debug: "+ target.innerHTML);
+// };
+
