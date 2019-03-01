@@ -45,20 +45,27 @@ document.write(bodyText[Math.floor(Math.random()*7)]+" ")
 </div>
 <footer id="footer">
 <div class="innertube">
-<p>Footer...</p>
+<p>joeschedule.com</p>
 </div>
 </footer>
 </body>
 <script>
-    $( "#top").html(generateTextTop());
+    //var str="/cgi-bin/cgi/ngfop/other2.pl?htmlname=top2cgi.htm"
+    var str="/cgi-bin/cgi/ngfop/left02.pl?htmlname=top2cgi.htm"
+    //$( "#top").html(generateTextTop());
+    testAjax33(str, $("#top" ));
+
     $( "#left").html(generateTextLeft());
-    //$( "#middle").html(generateTextMiddle());
-    var str = "http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.cgi?jsquery="+'chalk';
+
+    //var str = "http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.cgi?jsquery="+'chalk';
+    str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=hellomsg.htm";
 	testAjax33(str, $("#middle" ));
 
     //$( "#right").html(generateTextRight());
 	str = "http://www.joeschedule.com/cgi-bin/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&student=&htmlname=editschcgi.htm"
     testAjax33(str, $("#right" ));
+   
+    showMySchedules('cb', $('#cblist'));
 
 </script>
 </html>

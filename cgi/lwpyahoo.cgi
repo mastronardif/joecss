@@ -9,6 +9,9 @@ File: .pl
 Purpose: get images from yahoo w/ out the noise.
 
 Note: FM make this more robust, to get all images from other url that don't have images off the root.
+
+api key: AIzaSyCNnRxzuGcCyLBQY-XzhZplafnGW3HqZmc
+
 =cut
 
 

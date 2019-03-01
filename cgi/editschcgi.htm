@@ -1,10 +1,4 @@
-<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
-<title>Edit Schedule</title>
-<link rel="stylesheet" type="text/css" href="/cgi/ngfop/sch01.css"/>
-</head>
+
 
 <script type="text/javascript">
 var colorbgnd   = 'black';
@@ -100,21 +94,32 @@ function getList(obj)
    return str2;
 }
 
-function save2(name, desc, student)
+function save2(type)
 {
+   //var obj = top.frames[0].document.myform;
+   //var student = obj.Students.options[obj.Students.selectedIndex].text;
+
+   //parent.frames[1].save2_2(type, document.myform.d0.value, student);
+   var student="Jake";
+   var desc = document.myformeditschtop.d0.value;   
+   alert('top desc= '+ desc);
+   save2_2(type, desc, student);
+}
+
+function save2_2(name, desc, student)
+{
+/**********
    if (student)
    {
-      var xmlfile = document.myformeditsch.name.value;
+      var xmlfile = document.myform.name.value;
       
-      var obj = document.myformeditsch.elements.CW1;
+      var obj = document.myform.elements.CW1;
       var szList = getList(obj);
       
       var szData = student + " " + xmlfile;
-      document.myformeditsch.student.value = szData;
-      // Fm 6/8/9 var answer = confirm (":save2 "+ desc);
-      //desc
-      //if (!answer) return;
+      document.myform.student.value = szData;
    }
+**********/
    
 	var w_space = String.fromCharCode(32);
 	var bValidName=0;
@@ -144,7 +149,21 @@ function save2(name, desc, student)
 
 	document.myformeditsch.type.value = type;
 	document.myformeditsch.d0.value = desc;
-	document.myformeditsch.submit();
+
+	var data = $("form[name=myformeditsch]").serialize();
+	//alert('Form data = <br/>\n' + data);
+	//document.myformeditsch.submit();
+	
+	//<form name="myformeditsch" method="post" //action="/cgi-bin/cgi/ngfop/editsch.cgi?action=save">	
+	$.ajax({
+    url: "/cgi-bin/cgi/ngfop/editsch.cgi?action=save&htmlname=editschcgi.htm",
+    type: "POST",
+    data: data,
+    success: function(results){
+        //alert(results);
+		$( "#right" ).html( "<strong>" + results + "</strong>" );
+    }
+});
 }
 
 
@@ -168,7 +187,7 @@ function decorateRow(str)
 
 
 // the cut vars
-var	gT1   = "";
+//var	gT1   = "";
 var	gHR55 = "";
 var	gI55src  = "";
 var	gI55w = "";
@@ -181,16 +200,16 @@ function cutRow()
 	{
 		if (myformeditsch.elements.R1[iii].checked)	
 		{
-			gT1   =document.myformeditsch.T1  [iii].value;
-			gHR55 =initializeRows[iii].value;
-			gI55src =document.myformeditsch.I55 [iii].src;
-			gI55w   =document.myformeditsch.I55 [iii].width;
-			gI55h   =document.myformeditsch.I55 [iii].height;
-			gR55  =document.myformeditsch.R55 [iii].value;
+			//gT1    =document.myformeditsch.T1  [iii].value;
+			gHR55  = document.myformeditsch.HR55[iii].value;
+			gI55src=document.myformeditsch.I55 [iii].src;
+			gI55w  =document.myformeditsch.I55 [iii].width;
+			gI55h  =document.myformeditsch.I55 [iii].height;
+			gR55   =document.myformeditsch.R55 [iii].value;
 
 			//
 			// clear row
-			document.myformeditsch.T1  [iii].value ="";
+			//document.myformeditsch.T1  [iii].value ="";
 			document.myformeditsch.HR55[iii].value ="";
 			document.myformeditsch.I55 [iii].src   ="";
 			document.myformeditsch.I55 [iii].width ="";
@@ -211,7 +230,7 @@ function pasteRow()
 	{
 		if (myformeditsch.elements.R1[iii].checked)	
 		{
-			document.myformeditsch.T1  [iii].value = gT1;
+			//document.myformeditsch.T1  [iii].value = gT1;
 			document.myformeditsch.HR55[iii].value = gHR55;
 			document.myformeditsch.I55 [iii].src   = gI55src;
 			document.myformeditsch.I55 [iii].width = gI55w;
@@ -234,7 +253,7 @@ function insertRow()
 
    for (var iii = 0; iii < myformeditsch.elements.R1.length; iii++)
    {
-	   mylistT1.  push(document.myformeditsch.T1  [iii].value);
+	   //mylistT1.  push(document.myformeditsch.T1  [iii].value);
 	   mylistR1.  push(document.myformeditsch.R1  [iii].value);
 	   mylistHR55.push(document.myformeditsch.HR55[iii].value);
 	   mylistI55. push(document.myformeditsch.I55 [iii].src);
@@ -249,7 +268,7 @@ function insertRow()
 	if ((iRow +1)< myformeditsch.elements.R1.length)
 	{
 		// move radio check
-		document.myformeditsch.T1  [iRow].value = "";
+		//document.myformeditsch.T1  [iRow].value = "";
 		document.myformeditsch.R1  [iRow].value = "";
 		document.myformeditsch.HR55[iRow].value = "";
 		document.myformeditsch.I55 [iRow].src   = "";
@@ -263,7 +282,7 @@ function insertRow()
 			// pop
 			if ((iii +1)< myformeditsch.elements.R1.length)
 			{
-				document.myformeditsch.T1  [(iii+1)].value = mylistT1  [iii%myformeditsch.elements.R1.length];
+				//document.myformeditsch.T1  [(iii+1)].value = mylistT1  [iii%myformeditsch.elements.R1.length];
 				document.myformeditsch.R1  [(iii+1)].value = mylistR1  [iii%myformeditsch.elements.R1.length];
 				document.myformeditsch.HR55[(iii+1)].value = mylistHR55[iii%myformeditsch.elements.R1.length];
 				document.myformeditsch.I55 [(iii+1)].src   = mylistI55 [iii%myformeditsch.elements.R1.length];
@@ -299,13 +318,15 @@ onLoad="OnInit();"
 </tr>
 <tr>
 <td colspan="5" align="center">
-<br/>name:
-<input type text name=d0 size = 20 value="Enter name here!">
+<br/>name:  
+    <description>
+		<input type="text" name="d0" size = "20" value="<DESCRIPTION>">
+    </description>
 </td>
 </tr>
 </form>
 
-<form name="myformeditsch" method="post" action="/cgi-bin/cgi/ngfop/editsch.cgi?action=save">
+<form name="myformeditsch">
 
 <!-- hidden shits -->
 <filename>
@@ -425,13 +446,19 @@ function initializeRows()
 }
 
 initializeRows();
-if (parent.SetHeadValue)
+//if (parent.SetHeadValue)
 {
     <description>
 		var desc = "<DESCRIPTION>";
     </description>
-	parent.SetHeadValue("d0", desc);
+	
+	//document.myformeditsch.d0.value = desc;
+	
+	//alert(document.myformeditschtop.name);
+	//alert('desc= '+ desc + " name= " + document.myformeditsch.name.value);
+	
+	//parent.SetHeadValue("d0", desc);
+	//document.myformeditschtop.d0.value = desc;
 }
 </script>
 </body>
-</html>

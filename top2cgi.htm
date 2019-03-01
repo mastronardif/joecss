@@ -1,44 +1,9 @@
-function generateTextTop() {
-//if (1==1) {
-//document.write
-return(
-`
-<script>
-function cp2sch22()
-{
-   //if(!parent.middle.getListItem) return;   
-   if(!getListItem) return;
-   
-
-   //var szMid = parent.middle.getListItem();
-   var szMid = getListItem();   
-   
-   if (szMid)
-   {
-	   test(szMid);
-
-	   // //Cheesy solution for the frames for iframe
-		// if (parent.right.frames.length == 0)
-		// {
-			// parent.right.test(szMid);
-		// }
-		// else
-		// {
-			// parent.right.frames[1].test(szMid);
-		// }
-   }
-}
-</script>
-
 <form name = "myformtop" method="post" action="/cgi-bin/cgi/ngfop/top.pl">
 <input type="hidden" NAME="leftsrc" value="cb"/>
 <input type="hidden" NAME="leftvalue" value="blank.xml"/>
 <input type="hidden" NAME="leftfname" value="blank.xml"/>
 <input type="hidden" NAME="leftfdesc" value=""/>
 <input type="hidden" NAME="middlefname" value=""/>
-<!-- FM 3/17/7 <table style="height:"100%;" height="100%" width="100%"border="0">
-<table style= "xxxxxheight:100%; width:100%; border:0">
--->
 <table height="100%" width="100%" border="0">
 <tr align="center">
 
@@ -61,12 +26,11 @@ font-family: Verdana; font-size:12px;">
 <a class="menuitem" title="Create a new schedule or choice board" href="/cgi-bin/cgi/ngfop/other2.pl?htmlname=editschframe.htm&name=blank.xml" target="right">New</a>
 <a class="menuitem" title="Edit" href="javascript:editSchedule2();" >Edit</a>
 <a class="menuitem" title="Delete" href="javascript:del();">Del</a>
-<a class="menuitem" title="Sign Out" href="javascript:top.location='/cgi-bin/cgi/ngfop/signin.pl?action=signout'">Sign Out</a>
+<a class="menuitem" title="Sign Out" href="javascript:top.location='/cgi-bin/cgi/ngfop/signin.cgi?action=signout'">Sign Out</a>
 <a class="menuitem" title="Help" href="javascript:help();">Help</a>
+
+<i>Welcome <ID/></i><br/>
 </td>
 </tr>
 </table>
 </form>
-`);
-//}
-}

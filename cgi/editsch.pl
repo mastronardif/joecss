@@ -37,11 +37,10 @@ my %session = &SCH_getSession(); #
 ##############################
 # get parameters from a form #
 ##############################
-
-my $html        = $query->param('htmlname') || "./editschcgi.htm";
+#FM7/25/8 my $html        = $query->param('htmlname') || "./editsch33.htm";
+my $html        = $query->param('htmlname') || "./editsch.htm";
 my $gStudent    = $query->param('student') || "";
 my $xmlfilename = $query->param('name')    || $blankSchedule;
-#my $actioncgi   = $query->param('action') || ""; # new for edit mode
 
 my $usedir = "";
 my @parts = split /,\s*/, $xmlfilename;
@@ -72,8 +71,8 @@ elsif (($gStudent !~ /\(.*\)/) && ($xmlfilename !~ /blank.xml/)) # reading
 ##########################################
 my $description = $query->param('d0') || "";
 {
-## Fm wtf 2/21/19 $description =~ s/[^\w]//g;
-## Fm wtf 2/21/19 $description = lc $description;
+$description =~ s/[^\w]//g;
+$description = lc $description;
 ##########################################
 
 # type = cb, sch
@@ -164,7 +163,7 @@ if (!(-e $fn))
 
          my @parts = split /\./, $calparts1[1];
 
-         ## FM 2/21/19 $description = "$calparts1[0] $parts[0]";
+         $description = "$calparts1[0] $parts[0]";
       }
    }
    
