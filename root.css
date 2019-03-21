@@ -39,7 +39,7 @@ position: absolute;
 top: 50px; /* Set this to the height of the header */
 bottom: 50px; /* Set this to the height of the footer */
 left: 0;
-width: 200px;
+width: 220px;
 overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
 background: #DAE9BC;
 }
@@ -48,7 +48,7 @@ position: absolute;
 top: 50px; /* Set this to the height of the header */
 bottom: 50px; /* Set this to the height of the footer */
 right: 0;
-width: 200px;
+width: 240px;
 overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
 background: #F7FDEB;
 }
@@ -89,4 +89,16 @@ width: 100%;
    
     background-color: coral;
     color: white;
+}
+
+.myfaicon {
+    color:black;
+    font-size:20px;
+    padding: 5px;
+    /**
+    margin-top:5px;
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom:5px;
+**/
 }

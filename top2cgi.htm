@@ -4,6 +4,7 @@
 <input type="hidden" NAME="leftfname" value="blank.xml"/>
 <input type="hidden" NAME="leftfdesc" value=""/>
 <input type="hidden" NAME="middlefname" value=""/>
+
 <table height="100%" width="100%" border="0">
 <tr align="center">
 
@@ -17,9 +18,10 @@ font-family: Verdana; font-size:12px;">
 <OPTION VALUE="4">printer
 <OPTION VALUE="1">email
 <OPTION VALUE="1">phone app
+<OPTION VALUE="1">*upload Images
 </SELECT>
 
-<a class="menuitem" title="Execute a command" href="javascript:testAjax(document.myformtop.Extra.options[document.myformtop.Extra.selectedIndex].text);">Go!</a>
+<a class="menuitem" title="Execute a command" href="javascript:ShowExtra(document.myformtop.Extra.options[document.myformtop.Extra.selectedIndex].text);">Go!</a>
 
 <a class="menuitem" title="My Picture" href="javascript:myPicture();"><IMG SRC="./ca1.gif" alt="My Picture" align="middle" width="23" height="25" border="1"></a>
 <a class="menuitem" title="copy left to right" href="javascript:cp2sch22();"><IMG SRC="/cgi/ngfop/rarrow1.gif" ALT="copy left to right" align="middle" width="23" height="15" border="1"></a>
@@ -34,3 +36,4 @@ font-family: Verdana; font-size:12px;">
 </tr>
 </table>
 </form>
+

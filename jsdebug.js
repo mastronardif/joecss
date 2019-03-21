@@ -336,3 +336,25 @@ function myPicture()
 //     target.innerHTML && alert("debug: "+ target.innerHTML);
 // };
 
+
+function ShowExtra(szExtra)
+{
+  var fn = getLeftFN();
+  alert(szExtra+ "\n" +fn);
+  template = "&htmlname=" + "template01.htm";
+  var src="/cgi-bin/cgi/ngfop/editsch.pl?name=" + fn + template;
+
+  if (szExtra === 'email') {
+    src="/cgi-bin/cgi/ngfop/editsch.pl?name=" + fn + template;
+  }
+   
+  if (szExtra === '*upload Images') {
+    template = "?htmlname=" + "fileuploadimg33.html";
+    src="/cgi-bin/cgi/ngfop/other2.pl" + template;
+  }  
+
+   alert("src= " + "\n" + src);
+   window.open(src);
+
+   
+}

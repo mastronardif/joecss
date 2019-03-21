@@ -1,4 +1,7 @@
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="root.css">
+
 
 <script type="text/javascript">
 var colorbgnd   = 'black';
@@ -295,35 +298,17 @@ function insertRow()
 }
 </script>
 
-<!--<body Bgcolor="#99CCFF">
-<body topmargin="0" bgcolor='rgb(249, 201, 92)';>
-onLoad="OnInit();"
--->
-
-<body  topmargin="0">
 <form name="myformeditschtop" method="post" action="javascript:nothing('');">
-<tr>
-<td align="center">
-<a class="menuitem" title="Save" href="javascript:save2('cb');"><IMG SRC="/cgi/ngfop/tick6.gif" alt="Save" width="23" height="20" border="0"	style="vertical-align: middle"></a>
-</td>
-<td align="center">
-<a class="menuitem" title="Cut row" href="javascript:cutRow();"><IMG SRC="/cgi/ngfop/cut.gif" alt="Cut row" width="23" height="20" border="0"	style="vertical-align: middle"></a>
-</td>
-<td align="center">
-<a class="menuitem" title="insert row" href="javascript:insertRow();"><IMG SRC="/cgi/ngfop/darrow1.gif" alt="Insert row" width="23" height="20" border="0"	style="vertical-align: middle"></a>
-</td>
-<td align="center">
-<a class="menuitem" title="Paste row" href="javascript:pasteRow();"><IMG SRC="/cgi/ngfop/paste.gif" alt="Paste row" width="23" height="20" border="0"	style="vertical-align: middle"></a>
-</td>
-</tr>
-<tr>
-<td colspan="5" align="center">
-<br/>name:  
+<a title="Save" href="javascript:save2('cb');"> <i class="fas fa-save myfaicon"></i></a>
+<a title="Cut row" href="javascript:cutRow();"> <i class="fas fa-cut myfaicon"></i></a>
+<a title="insert row" href="javascript:insertRow();"> <i class="fas fa-plus-square myfaicon"></i></a>
+<a title="Paste row" href="javascript:pasteRow();"><i class="fas fa-paste myfaicon"></i></a>
+<hr style=" margin-top: 2px; margin-bottom:2px;"></hr>
+<span> Name:  </span>
     <description>
 		<input type="text" name="d0" size = "20" value="<DESCRIPTION>">
     </description>
-</td>
-</tr>
+
 </form>
 
 <form name="myformeditsch">
@@ -461,4 +446,4 @@ initializeRows();
 	//document.myformeditschtop.d0.value = desc;
 }
 </script>
-</body>
+
