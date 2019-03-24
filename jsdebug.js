@@ -353,6 +353,16 @@ function ShowExtra(szExtra)
     src="/cgi-bin/cgi/ngfop/other2.pl" + template;
   }  
 
+  if (szExtra === '*upload croped Images') {
+    template = "?htmlname=" + "imgcrop.html";
+    src="/cgi/ngfop/other2.pl" + template;
+  }
+
+  if (szExtra === '*My Images') {
+    template = "?htmlname=" + "mypics.html";
+    src="/cgi/ngfop/mypicshtml.cgi";
+  }  
+
    alert("src= " + "\n" + src);
    window.open(src);
 
