@@ -27,7 +27,7 @@ Web images may be subject to copyright.
 
 <input type="button" value="sch!" onClick="javascript:showMySchedules('sch', $('#cblist'));">
 <input type="button" value="CB!" onClick="javascript:showMySchedules('cb', $('#cblist'));">
-<input type="button" value="my Sch!" onClick="javascript:showMySchedules('mysch', $('#cblist'));">
+<input type="button" value="my pics!" onClick="javascript:showMySchedules('mypics', $('#cblist'));">
 <div id="cblist">my S</div>
 </form>
 `);

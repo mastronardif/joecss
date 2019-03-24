@@ -163,6 +163,10 @@ function showMySchedules(id, outDiv)
   else if (id === 'cb') {
     str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=catagorycgi.htm";
   }
+  else if (id === 'mypics') {
+    str = "/cgi/ngfop/mypicshtml.cgi?htmlname=mypicscgi.htm";
+  }
+
 	testAjax33(str, outDiv);
 }
 
@@ -358,9 +362,11 @@ function ShowExtra(szExtra)
     src="/cgi/ngfop/other2.pl" + template;
   }
 
-  if (szExtra === '*My Images') {
-    template = "?htmlname=" + "mypics.html";
-    src="/cgi/ngfop/mypicshtml.cgi";
+  if (szExtra === '*My Pics') {
+    template = "?htmlname=" + "mypicscgi.htm";
+    src="/cgi/ngfop/mypicshtml.cgi" + template;
+    testAjax33(src, $("#middle" ));
+    return;
   }  
 
    alert("src= " + "\n" + src);
