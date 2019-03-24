@@ -97,6 +97,29 @@ function getList(obj)
    return str2;
 }
 
+function newSch(type)
+{
+	var question = "Do you want to create a new picture schedule?";
+	if(!window.confirm(question)) {
+		return;
+	}
+	str = "/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&htmlname=editschcgi.htm"
+    testAjax33(str, $("#right" ));
+	
+    //str = "http://www.joeschedule.com/cgi-bin/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&htmlname=editschcgi.htm";
+	/******
+	$.ajax({
+		url: "http://www.joeschedule.com/cgi-bin/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&student=&htmlname=editschcgi.htm",
+		type: "POST",
+		data:{},
+		success: function(results){
+			//alert(results);
+			$( "#right" ).html( "<strong>" + results + "</strong>" );
+		}
+	});
+	******/
+}
+
 function save2(type)
 {
    //var obj = top.frames[0].document.myform;
@@ -299,6 +322,7 @@ function insertRow()
 </script>
 
 <form name="myformeditschtop" method="post" action="javascript:nothing('');">
+<a title="New" href="javascript:newSch('cb');"> <i class="fas fa-file myfaicon"></i></a>
 <a title="Save" href="javascript:save2('cb');"> <i class="fas fa-save myfaicon"></i></a>
 <a title="Cut row" href="javascript:cutRow();"> <i class="fas fa-cut myfaicon"></i></a>
 <a title="insert row" href="javascript:insertRow();"> <i class="fas fa-plus-square myfaicon"></i></a>
