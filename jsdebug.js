@@ -232,9 +232,7 @@ function cp2sch22()
 
 
 function editSchedule2() {
-  var xmlfilename = getLeftFN();
-  var student = "&student=Jake";
-  //var str = "/cgi-bin/cgi/ngfop/other2.pl?htmlname=editschframe.htm&name="+xmlfilename+student;
+  var xmlfilename = getLeftFN();  
   var str = "/cgi-bin/cgi/ngfop/editsch.cgi?htmlname=editschcgi.htm&action=edit&name="+xmlfilename;
 
   if (/blank.xml/i.test(xmlfilename))

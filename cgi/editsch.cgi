@@ -451,15 +451,6 @@ sub saveList()
    #FM 8/8/8
    my $studentWs = "(";
    my $studentMs = "(";
-   my @sws = $query->param('HCW1');
-   my @sms = $query->param('HCM2');
-   ####print "\@sws = ".scalar(@sws);   print "\@sws = @sws";   print "\@sms = @sms";
-   
-   #my @sws = $query->param('CW1');
-   #print "\@sws = ".scalar(@sws);
-   #print "\@sws = @sws";
-   #my @sms = $query->param('CM2');
-   #FM 8/8/8
 
    my $ii = -1;
    my $row = 0;
@@ -521,22 +512,7 @@ END
       print LOG "\n</name>\n";
       print LOG "</row>\n";
       
-      #FM 8/8/8
-      if ($sws[$ii] =~ /./)
-      {
-         #fm 8/13/8 $studentWs .= "$ii";
-         $studentWs .= "$row";
-         $studentWs .= ",";
-         #my @sws = $query->param('CW1');
-         #my @sms = $query->param('CM2');
-      }
-      if ($sms[$ii] =~ /./)
-      {
-         #fm 8/13/8 $studentMs .= "$ii";    
-         $studentMs .= "$row"; 
-         $studentMs .= ",";
-      }
-      #FM 8/8/8
+
 
       $row++;
 
@@ -594,22 +570,6 @@ if ($studentMs eq ")")
    {
       $studentMs = "m$studentMs";
    }
-
-   
-#print("<FM> \$studentWs = $studentWs</FM>");
-#print("<FM> \$studentMs = $studentMs</FM>");
-#print("<FM>swms \$swms = $swms</FM>");
-
-#Fm 8/13/8 $swms = "$swms $studentWs $studentMs $all";
-$swms = "$gStudent $studentWs $studentMs $all";
-
-#print("<FM>\$swms = $swms</FM>");
-if ($swms)
-{
-   ##&SaveStudentWMs22();
-   #&SCH_SWMs_SaveList($session{dir}, $gStudent);
-   &SCH_SWMs_SaveList($session{dir}, $swms);
-}
 
    return $fn;
 }

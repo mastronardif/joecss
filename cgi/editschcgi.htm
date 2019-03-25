@@ -103,21 +103,9 @@ function newSch(type)
 	if(!window.confirm(question)) {
 		return;
 	}
-	str = "/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&htmlname=editschcgi.htm"
-    testAjax33(str, $("#right" ));
 	
-    //str = "http://www.joeschedule.com/cgi-bin/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&htmlname=editschcgi.htm";
-	/******
-	$.ajax({
-		url: "http://www.joeschedule.com/cgi-bin/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&student=&htmlname=editschcgi.htm",
-		type: "POST",
-		data:{},
-		success: function(results){
-			//alert(results);
-			$( "#right" ).html( "<strong>" + results + "</strong>" );
-		}
-	});
-	******/
+	str = "/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&htmlname=editschcgi.htm"
+  testAjax33(str, $("#right" ));	 
 }
 
 function save2(type)
