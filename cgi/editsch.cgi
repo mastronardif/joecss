@@ -52,20 +52,15 @@ if (@parts == 2)
 }
 
 my $swms = "";
-#print "\$gStudent($gStudent)";
 
-#FM 8/13/8 if ($gStudent =~ /\(.*\)/) #saving
-if ($gStudent =~ /\.xml/) #saving
-{
-   $swms = $gStudent;
-   #print "\$Saving";
-}
-elsif (($gStudent !~ /\(.*\)/) && ($xmlfilename !~ /blank.xml/)) # reading
-{
-   $swms = &SCH_SWMs_GetRows($session{dir}, $gStudent, $xmlfilename);
-   #print "\$gStudent= $gStudent";
-   #print "\$Reading";
-}
+#if ($gStudent =~ /\.xml/) #saving
+#{
+#   $swms = $gStudent;
+#}
+#elsif (($gStudent !~ /\(.*\)/) && ($xmlfilename !~ /blank.xml/)) # reading
+#{
+#   $swms = &SCH_SWMs_GetRows($session{dir}, $gStudent, $xmlfilename);
+#}
 
 ##########################################
 # mangle the description into a filename.#
@@ -277,25 +272,6 @@ if ($action=~ /^delete$/i)
             $trim =~ s/<FILENAME>/$defFile/igs;
             print($trim);
          }
-         ###############################
-         # if <SWMS>                   #
-         ###############################
-         elsif ($marker =~ /<\/\b$tagSWMs\b>/i)
-         {
-            $tag = $tagSWMs;
-            $_ = $marker;
-
-            /<\b$tag\b>(.*)<\/\b$tag\b>/igs;
-
-            #remove leading trailing ws
-            my $trim = $1 || "";
-            $trim =~ s/^\s+//;
-            $trim =~ s/\s+$//;
-
-            $trim =~ s/<SWMS>/$swms/igs;
-
-            print $trim;
-         }
          else
          {
             if ($marker =~ /<description>/i)
@@ -327,12 +303,12 @@ else
                print @table;
             }
 
-            if ($marker =~ /<REWARD>/i)
-            {
-               $XMLkeys = uc "<reward>,<picture>,<name>";
-               my @table = &SCH_xmLRD($marker, $XMLkeys, @schData);
-               print @table;
-            }
+           # if ($marker =~ /<REWARD>/i)
+            #{
+             #  $XMLkeys = uc "<reward>,<picture>,<name>";
+              # my @table = &SCH_xmLRD($marker, $XMLkeys, @schData);
+               #print @table;
+            #}
          }
 
          # append blank rows if edit
@@ -573,14 +549,6 @@ if ($studentMs eq ")")
 
    return $fn;
 }
-
-#sub SaveStudentWMs()
-#{
-   #if (length gStudent)
-   #{
-   #   &SCH_SWMs_SaveList($session{dir}, $gStudent);
-   #}    
-#}
 
 sub SCH_copyPic()
 {

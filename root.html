@@ -51,11 +51,13 @@ document.write(bodyText[Math.floor(Math.random()*7)]+" ")
 </body>
 <script>
     //var str="/cgi-bin/cgi/ngfop/other2.pl?htmlname=top2cgi.htm"
-    var str="/cgi-bin/cgi/ngfop/left02.pl?htmlname=top2cgi.htm"
+    var str="/cgi-bin/cgi/ngfop/left02.pl?htmlname=top2cgi.htm";
     //$( "#top").html(generateTextTop());
     testAjax33(str, $("#top" ));
 
-    $( "#left").html(generateTextLeft());
+    //$( "#left").html(generateTextLeft());
+    str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=leftcgi.htm";
+    testAjax33(str, $("#left" ));
 
     //var str = "http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.cgi?jsquery="+'chalk';
     str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=hellomsg.htm";
