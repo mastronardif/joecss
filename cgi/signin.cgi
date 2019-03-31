@@ -135,7 +135,8 @@ my $oreo = cookie( -NAME    => 'sessionID',
                 );
 #                -DOMAIN  => '.perl.com');
 
-my $whither  = "http://www.joeschedule.com/cgi/ngfop/root.html";
+## my $whither  = "http://www.joeschedule.com/cgi/ngfop/root.html";
+my $whither  = "http://www.joeschedule.com/cgi/ngfop/left02.pl?htmlname=topnav2.html";
 
 #FM 2/23/19 my $whither  = "http://www.joeschedule.com/cgi/ngfop/new_page_3.htm";
 #my $whither  = "http://www.pl1321.pairlitesite.com/cgi/ngfop/new_page_3.htm";

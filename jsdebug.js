@@ -247,6 +247,9 @@ function editSchedule2() {
   
 }
 
+function delMyPic(id) {
+  alert('delMyPic(' + id + ')');
+}
 
 function del()
 {
@@ -342,7 +345,7 @@ function myPicture()
 function ShowExtra(szExtra)
 {
   var fn = getLeftFN();
-  alert(szExtra+ "\n" +fn);
+  //alert(szExtra+ "\n" +fn);
   template = "&htmlname=" + "template01.htm";
   var src="/cgi-bin/cgi/ngfop/editsch.pl?name=" + fn + template;
 
@@ -355,7 +358,7 @@ function ShowExtra(szExtra)
     src="/cgi-bin/cgi/ngfop/other2.pl" + template;
   }  
 
-  if (szExtra === '*upload croped Images') {
+  if (szExtra === '*upload cropped Images') {
     template = "?htmlname=" + "imgcrop.html";
     src="/cgi/ngfop/other2.pl" + template;
   }
@@ -367,7 +370,7 @@ function ShowExtra(szExtra)
     return;
   }  
 
-   alert("src= " + "\n" + src);
+   //alert("src= " + "\n" + src);
    window.open(src);
 
    
