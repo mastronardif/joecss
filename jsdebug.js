@@ -21,6 +21,32 @@ $.ajax({
 });	
 }
 
+function testAjax44(url, method, data, outDiv) {
+//console.log(data); //return;
+$.ajax({
+  type: method,
+  url: url,  
+  //data: data,
+  data: JSON.stringify(data),
+
+  contentType: "application/json",
+  success: function( result ) {
+  outDiv.html(result.msg);	
+  },
+  error: function (xhr, status, error) {
+    var err = status;
+    //var err = eval("(" + xhr.responseText + ")");
+    // var acc = []
+    // $.each(status, function(index, value) {
+    //     acc.push(index + ': ' + value);
+    // });
+    //var err=JSON.stringify(acc);
+    //$( "#middle" ).html( '<span style="color:Red;">' + err + "</span>" );
+	outDiv.html( '<span style="color:Red;">' + err + error+ "</span>" );
+	
+  }
+});	
+}
 
 function testAjax33(url, outDiv) {
 	//alert(area);return;
@@ -57,33 +83,6 @@ $.ajax({
   }
 });	
 }
-
-// function testAjax22(url, area) {
-	// //alert(area);return;
-// $.ajax({
-  // url: url,
-  // data: {
-    // zipcode: 97201
-  // },
-  // success: function( result ) {
-   // // return result;
-	// //$( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
-	  // if ('Middle'=== area) {
-		  // $( "#middle" ).html( "<strong>" + result + "</strong>" );
-    // }
-  // },
-  // error: function (xhr, status, error) {
-    // var err = status;
-    // //var err = eval("(" + xhr.responseText + ")");
-    // // var acc = []
-    // // $.each(status, function(index, value) {
-    // //     acc.push(index + ': ' + value);
-    // // });
-    // //var err=JSON.stringify(acc);
-    // $( "#middle" ).html( '<span style="color:Red;">' + err + "</span>" );
-  // }
-// });	
-// }
 
 function go(fn)
 {
@@ -249,6 +248,9 @@ function editSchedule2() {
 
 function delMyPic(id) {
   alert('delMyPic(' + id + ')');
+  var url = "/cgi/ngfop/mypicdelete.php";
+  var data = {"id": id}; //"test2.txt"};
+  testAjax44(url, 'DELETE', data, $("#footer" )); 
 }
 
 function del()
