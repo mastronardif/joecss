@@ -62,9 +62,12 @@ closedir DIR;
 
 #exit(0);
     my $mypic;
-
+	#my $nochache = 'dummy='. time();
 	foreach my $image (@images){
 		$mypic = "$root$image";
+		##push (@yahooimgs, $mypic);
+		#$nochache = 'dummy='. time();
+		#$mypic =  $mypic.'?'.$nochache;
 		push (@yahooimgs, $mypic);
 	}
 

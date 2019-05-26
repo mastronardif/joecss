@@ -80,7 +80,7 @@ body {
 
 @media screen and (max-width: 600px) {
 .topnav {
-  //overflow: hidden;
+  /*overflow: hidden;*/
   background-color: #28B5BD;
   }
 /****
@@ -105,8 +105,6 @@ body {
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="jsdebug.js"></script>
-<script src="jsdebugtop.js"></script>
-<script src="jsdebugleft.js"></script>
 
 </head>
 <body>
@@ -139,10 +137,8 @@ body {
 
   </div>
   
-   <a href="javascript:void(0);" onclick="javascript:myPicture()" id="menuButton" title="My Pictures" class="w3-dropdown-click w3-button w3-bar-item topnav-icons fas fa-camera" style="font-size:28px;margin-top:-2px"></a>
-         
+  <a href="javascript:void(0);" onclick="javascript:myPicture()" id="menuButton" title="My Pictures" class="w3-dropdown-click w3-button w3-bar-item topnav-icons fas fa-camera" style="font-size:28px;margin-top:-2px"></a>         
   <a href="javascript:void(0);" onclick="javascript:cp2sch22()" id="menuButton" title="Copy Left to Right" class="fas fa-arrow-circle-right" style="font-size:28px;margin-top:-2px"></a>
- 
 
   <span class="welcome"><i>Welcome <ID/></i></span>
   <a style="float:right;" href="/cgi-bin/cgi/ngfop/signin.cgi?action=signout">Sign Out</a>
@@ -172,31 +168,25 @@ body {
 </div>
 <footer id="footer">
 <div class="innertube">
-<p>joeschedule.com</p>
+<span>joeschedule.com</span> <span style="color:red;float:right" id="message"></span>
 </div>
 </footer>
-
-<div style="padding-left:16px">
-  <h2>Responsive Search Bar</h2>
-  <p>Navigation bar with a search box and a submit button inside of it.</p>
-  <p>Resize the browser window to see the responsive effect.</p>
-</div>
 </form>
 </body>
 <script>
     //var str="/cgi-bin/cgi/ngfop/other2.pl?htmlname=top2cgi.htm"
-    var str="/cgi-bin/cgi/ngfop/left02.pl?htmlname=top2cgi.htm";
+    //var str="/cgi-bin/cgi/ngfop/left02.pl?htmlname=top2cgi.htm";
     //str = "/cgi-bin/cgi/ngfop/other2.pl?htmlname=topnav2.html";
     //$( "#top").html(generateTextTop());
     //testAjax33(str, $("#top" ));
 
-    str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=leftcgi.htm";    
+    var str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=leftcgi.htm";    
     testAjax33(str, $("#left" ));
 
     str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=hellomsg.htm";
 	testAjax33(str, $("#middle" ));
 
-	str = "http://www.joeschedule.com/cgi-bin/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&htmlname=editschcgi.htm"
+	str = "/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&htmlname=editschcgi.htm"
     testAjax33(str, $("#right" ));
    
     showMySchedules('cb', $('#cblist'));

@@ -332,9 +332,6 @@ function insertRow()
   <input type="hidden" name=type size = "10" value="">
   <input type="hidden" name=d0 size = "30" value="">
   <input type="hidden" name=student size = "30" value="">   
-<swms>
-  <input type="hidden" name="SWMs" value="<SWMS>"/>
-</swms>     
 
 <table border="1" cellpadding="0" width="100%">
 <row>
@@ -345,7 +342,7 @@ function insertRow()
 
             <td width="64%">
 			<input type="hidden" NAME="HR55" value="<PICTURE>">
-			<img NAME="I55" border="0" src="<PICTURE>" width="12px" height="40px">         
+			<img id="I55" NAME="I55" border="0" src="<PICTURE>" width="12px" height="40px">         
 			<input type="text" name="R55" size = "24" value = "<NAME>">
 			</td>
          </tr>
@@ -359,7 +356,7 @@ function insertRow()
 
            <td width="64%">
 			   <input type="hidden" NAME="HR55" value="">
-			   <img NAME="I55" border="0" src="" width="40" height="40">
+			   <img id="I55" NAME="I55" border="0" src="" width="40" height="40">
             <input type="text" name="R55" size = "24" value = "<NAME>">
 		    </td>
           </tr>
@@ -399,16 +396,20 @@ function test(src)
 	{
 		if (myformeditsch.elements.R1[iii].checked)	
 		{
-			if (szName != "")
+		
+			if (szName != "") {
 				document.myformeditsch.R55[iii].value = szName;
+			}
 
 			if (szPic != "")
 			{
-
+alert(iii+ ' \n'+ document.myformeditsch.HR55[iii].value+ ' \n *checked test '+ szPic );
 				document.myformeditsch.HR55[iii].value = szPic;
+alert("ht = "+document.myformeditsch.I55[iii].height);
 				document.myformeditsch.I55[iii].width  = gIwidth;
 				document.myformeditsch.I55[iii].height = gIheight;
 				document.myformeditsch.I55[iii].src    = szPic;
+				
 			}
 		}
 	}

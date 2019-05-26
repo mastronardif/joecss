@@ -98,7 +98,7 @@ function go(fn)
 
 function getListItem(iii)
 {
-//    alert("\74picture>"+gStr+"\74/picture>");
+   alert("\74picture>"+gStr+"\74/picture>");
     return "\74picture>"+gStr+"\74/picture>";
 
 	var obj    = document.myform;
@@ -162,6 +162,9 @@ function showMySchedules(id, outDiv)
   else if (id === 'cb') {
     str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=catagorycgi.htm";
   }
+  else if (id === 'pub') {
+    str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=publiccgi.htm";
+  }  
   else if (id === 'mypics') {
     str = "/cgi/ngfop/mypicshtml.cgi?htmlname=mypicscgi.htm";
   }
@@ -220,9 +223,9 @@ if (action == "clear")
 function cp2sch22()
 {
    if(!getListItem) return;
-
-   var szMid = getListItem();   
    
+   var szMid = getListItem();   
+      //alert('cp2sch22()' + szMid);
    if (szMid)
    {
 	   test(szMid);
@@ -250,7 +253,7 @@ function delMyPic(id) {
   alert('delMyPic(' + id + ')');
   var url = "/cgi/ngfop/mypicdelete.php";
   var data = {"id": id}; //"test2.txt"};
-  testAjax44(url, 'DELETE', data, $("#footer" )); 
+  testAjax44(url, 'DELETE', data, $("#message" )); 
 }
 
 function del()
