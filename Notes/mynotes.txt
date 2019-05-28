@@ -1,0 +1,21 @@
+
+.selected { background-color: green; }
+
+
+<li class="hover-item" id="cb479586986"> <input type="radio" name="C1" onclick="notifytop(&quot;cb479586986.xml&quot;, &quot;Images from google drive amd uploads.&quot;);">   <span id="3" onclick="myshowMiddle('cb479586986' , '/cgi-bin/cgi/ngfop/sch3.pl?htmlname=cb3acgi.htm&amp;name=cb479586986.xml')" ;="">Images from google drive amd uploads.</span>  </li>
+
+function myshowMiddle(id, src)
+{
+    //var element = document.getElementById(id);
+    //alert(src);
+    if (!src) {return;}
+
+    var str = "http://www.joeschedule.com"+ src;   
+
+	  testAjax33(str, $("#middle" ));
+
+// set li to .selected
+//$(this).addClass('selected');
+//$( "li" ).addClass( "selected" );
+$(id).addClass( "selected" );
+$(id).text( "ssssselected" );
