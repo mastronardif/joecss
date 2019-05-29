@@ -19,3 +19,4 @@ function myshowMiddle(id, src)
 //$( "li" ).addClass( "selected" );
 $(id).addClass( "selected" );
 $(id).text( "ssssselected" );
+ $('#cb477934782').css( "background-color", "" );
