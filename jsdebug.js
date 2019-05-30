@@ -377,6 +377,40 @@ function ShowExtra(szExtra)
 
    //alert("src= " + "\n" + src);
    window.open(src);
-
    
 }
+
+function setLiButtons(containerName)
+{
+  //alert(containerName);
+  // Get the container element
+  //var btnContainer = document.getElementById("cblist");
+  //var btnContainer = document.getElementById(containerName);
+  var btnContainer = document.getElementsByClassName(containerName);
+
+  //alert(btnContainer.length);
+  // Get all ______ with class="btn" inside the container
+
+
+// Loop through the buttons and add the active class to the current/clicked button
+//var btns = btnContainer[2].getElementsByTagName("li");
+
+  for (var ki = 0; ki < btnContainer.length; ki++) {
+    var btns = btnContainer[ki].getElementsByTagName("li");
+    //alert(btns.length);
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+
+      // If there's no active class
+      if (current.length > 0) { 
+        current[0].className = current[0].className.replace(" active", "");
+      }
+
+      // Add the active class to the current/clicked button
+      this.className += " active";
+      });
+    }
+  }
+}
+

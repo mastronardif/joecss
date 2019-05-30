@@ -2,16 +2,12 @@
 <link rel="stylesheet" type="text/css" href="/cgi/ngfop/sch01cgi.css"/>
 </head>
 
-<script type="text/javascript">
-//alert('leftschcgi.htm xxxxxxxxxxxxx');
-</script>
-
 <form name = "myform" method="post" action="/cgi-bin/cgi/ngfop/each.cgi">
 
 <hr></hr> 
 <font size="2" color="#FF0000"><b><i>My Schedules</i></b></font>
 <br>
-<ul id="ulSchedules22">
+<ul class="ulSchedules22">
 <Schedule>
 <!--
   <input type="radio" name="C1" onclick = 'notifytop("<FILE>", "<DESCRIPTION>");' /> 
@@ -29,7 +25,7 @@
 <br/> 
 <font size="2" color="#FF0000"><b><i>My Choice Boards</i></b></font>
  <br/>
-<ul id="ulSchedules22">
+<ul class="ulSchedules22">
 <ChoiceBoard>
 <!--
   <input type="radio" name="C1" onclick = 'notifytop("<FILE>", "<DESCRIPTION>");' />
@@ -43,7 +39,7 @@
 
 <font size="2" color="#FF0000"><b><i>Classroom</i></b></font>
 <br>
-<ul id="ulSchedules22">  
+<ul class="ulSchedules22">  
   <li class="hover-item"> <input type="radio" name="C1" onclick = 'notifytop("schlettersuc.xml", "Social questions");' />   <span id="3" onclick="myshowMiddle('3' , '/cgi-bin/cgi/ngfop/pubschs.pl?name=schlettersuc.xml&htmlname=cb3acgi.htm')";> Letters upper-case </span>  </li>
   <li class="hover-item"> <input type="radio" name="C1" onclick = 'notifytop("sch102686767.xml", "Social questions");' />   <span id="3" onclick="myshowMiddle('3' , '/cgi-bin/cgi/ngfop/pubschs.pl?name=sch102686767.xml&htmlname=cb3acgi.htm')";> Class Schedule</span>  </li>
   <li class="hover-item"> <input type="radio" name="C1" onclick = 'notifytop("sch102686968.xml", "Class Choice Board");' />   <span id="3" onclick="myshowMiddle('3' , '/cgi-bin/cgi/ngfop/pubschs.pl?name=sch97178354.xml&htmlname=cb3acgi.htm')";> Social Questions</span>  </li>
@@ -54,7 +50,7 @@
 
 <font size="2" color="#FF0000"><b><i>Chores</i></b></font>
 <br>
-<ul id="ulSchedules22">  
+<ul class="ulSchedules22">  
   <li class="hover-item"> <input type="radio" name="C1" onclick = 'notifytop("schs/sch12875936.xml", "Changing the sheets");' />   <span id="3" onclick="myshowMiddle('3' , '/cgi-bin/cgi/ngfop/pubschs.pl?name=sch12875936.xml&htmlname=cb3acgi.htm')";> Changing the sheets </span>  </li>
   <li class="hover-item"> <input type="radio" name="C1" onclick = 'notifytop("schs/sch13217963.xml", "Doing laundry");' />   <span id="3" onclick="myshowMiddle('3' , '/cgi-bin/cgi/ngfop/pubschs.pl?name=sch13217963.xml&htmlname=cb3acgi.htm')";> Doing laundry </span>  </li>
   <li class="hover-item"> <input type="radio" name="C1" onclick = 'notifytop("schs/sch12847280.xml", "Make your bed");' />   <span id="3" onclick="myshowMiddle('3' , '/cgi-bin/cgi/ngfop/pubschs.pl?name=sch12847280.xml&htmlname=cb3acgi.htm')";> Make your bed </span>  </li>
@@ -224,6 +220,8 @@
   <input type="radio"  name="C1" onclick = "notifytop('schs/sch12848803.xml', 'the description');"> 
   <A HREF="/cgi-bin/cgi/ngfop/pubschs.pl?name=sch12848803.xml&htmlname=cb3acgi.htm" TARGET="middle">Doing homework</A>
 <br>
-   
 </form>
 
+<script>
+  window.onload = setLiButtons('ulSchedules22');
+</script>
