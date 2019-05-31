@@ -1,4 +1,18 @@
 
+The below is causing alignment problems on the left side.
+see about removing li ul from the css.  also missing from joecss reporitory.
+http://www.joeschedule.com/cgi/ngfop/sch01.css
+
+li ul { /* second-level lists */
+	display: none;
+	position: absolute;
+	top: 1em;
+	left: 0;
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 .btn {
   border: none;
   outline: none;
