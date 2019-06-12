@@ -232,6 +232,20 @@ function cp2sch22()
    }
 }
 
+function editSchedule22() {
+  var xmlfilename = getLeftFN();  
+  var str = "/cgi-bin/cgi/ngfop/editsch.cgi?htmlname=editschcgi22.htm&action=edit&name="+xmlfilename;
+
+  if (/blank.xml/i.test(xmlfilename))
+	{
+		var strMsg = "Click on the radio button to the left of the \nschedule you wish to edit";
+		alert(strMsg);
+		return;
+	}
+   
+  //alert(str);
+  testAjax33(str, $("#right" ));
+}
 
 function editSchedule2() {
   var xmlfilename = getLeftFN();  
