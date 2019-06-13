@@ -114,7 +114,7 @@ function save2(type)
    //parent.frames[1].save2_2(type, document.myform.d0.value, student);
    var student="Jake";
    var desc = document.myformeditschtop.d0.value;   
-   alert('top desc= '+ desc);
+   alert('top desc333= '+ desc);
    save2_2(type, desc, student);
 }
 
@@ -162,19 +162,19 @@ function save2_2(name, desc, student)
 	document.myformeditsch.type.value = type;
 	document.myformeditsch.d0.value = desc;
 
-	var data = $("form[name=myformeditsch]").serialize();
+	var data = jQuery.param({ action: "save", htmlname : "editschcgi22.htm"})+'&'+ $("form[name=myformeditsch]").serialize();
 	//alert('Form data = <br/>\n' + data);
 	//document.myformeditsch.submit();
 	
 	//<form name="myformeditsch" method="post" //action="/cgi-bin/cgi/ngfop/editsch.cgi?action=save">	
 	$.ajax({
-    url: "/cgi-bin/cgi/ngfop/editsch.cgi?action=save&htmlname=editschcgi22.htm",
-    type: "POST",
-    data: data,
-    success: function(results){
-        //alert(results);
-		$( "#right" ).html( "<strong>" + results + "</strong>" );
-    }
+      	url: "/cgi/ngfop/editsch.cgi",
+    	type: "POST",
+    	data: data,
+    	success: function(results) {
+        	//alert(results);
+			$( "#right" ).html(results);
+    	}
 });
 }
 
