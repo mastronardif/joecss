@@ -76,7 +76,7 @@
  
  .sideba-right {   
   flex: none;
-  background: #af5858;
+  background: #BCCE98;
   padding: 20px;
   width: 250px;
   min-width: 150px;
@@ -106,7 +106,7 @@
  }
  .content-container2 {
   flex: 1 1 auto;
-  background: rgb(136, 57, 57);
+  background: #BCCE98;
   padding: 20px;
   width: 0%;
   
@@ -223,7 +223,7 @@ a {
 
 /* from root.css begin */
 .hover-item {
-	background-color: #F0FF;
+	background-color: #796e79;
 }
 
 .hover-item:hover {
@@ -272,9 +272,6 @@ a {
 	}
 
 }
-
-
-
 
 @media(max-width: 900px) {
   .page-ads { display: none; }
