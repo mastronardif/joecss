@@ -87,8 +87,8 @@ $.ajax({
 function go(fn)
 {
 //alert("go "+fn); return;
-  //var str="/cgi-bin/cgi/ngfop/lwpyahoo.pl?jsquery="+fn
-  var str="http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.cgi?jsquery="+fn;
+  //var str="http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.cgi?jsquery="+fn;
+  var str="/cgi/ngfop/lwpyahoo.cgi?jsquery="+fn;
 	// FM 6/18/8 parent.middle.location=str;
    //top.frames[2].location=str;   
    testAjax33(str, $("#middle" ));
@@ -155,15 +155,16 @@ function showMySchedules(id, outDiv)
 {
   //alert(outDiv);
 
-  var str = "http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.cgi?jsquery="+'Hawks';
+  //var str = "http://www.joeschedule.com/cgi-bin/cgi/ngfop/lwpyahoo.cgi?jsquery="+'Hawks';
+  var str = "/cgi/ngfop/lwpyahoo.cgi?jsquery="+'Hawks';
   if (id === 'sch') {
-    str = "http://www.joeschedule.com/cgi-bin/cgi/ngfop/left02.pl?htmlname=leftschcgi.htm";
+    str = "/cgi/ngfop/left02.pl?htmlname=leftschcgi.htm";
   }
   else if (id === 'cb') {
-    str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=catagorycgi.htm";
+    str = "/cgi/ngfop/catagory.pl?htmlname=catagorycgi.htm";
   }
   else if (id === 'pub') {
-    str = "/cgi-bin/cgi/ngfop/catagory.pl?htmlname=publiccgi.htm";
+    str = "/cgi/ngfop/catagory.pl?htmlname=publiccgi.htm";
   }  
   else if (id === 'mypics') {
     str = "/cgi/ngfop/mypicshtml.cgi?htmlname=mypicscgi.htm";
@@ -234,7 +235,7 @@ function cp2sch22()
 
 function editSchedule22() {
   var xmlfilename = getLeftFN();  
-  var str = "/cgi-bin/cgi/ngfop/editsch.cgi?htmlname=editschcgi22.htm&action=edit&name="+xmlfilename;
+  var str = "/cgi/ngfop/editsch.cgi?htmlname=editschcgi22.htm&action=edit&name="+xmlfilename;
 
   if (/blank.xml/i.test(xmlfilename))
 	{
@@ -249,7 +250,7 @@ function editSchedule22() {
 
 function editSchedule2() {
   var xmlfilename = getLeftFN();  
-  var str = "/cgi-bin/cgi/ngfop/editsch.cgi?htmlname=editschcgi.htm&action=edit&name="+xmlfilename;
+  var str = "/cgi/ngfop/editsch.cgi?htmlname=editschcgi.htm&action=edit&name="+xmlfilename;
 
   if (/blank.xml/i.test(xmlfilename))
 	{
@@ -279,7 +280,7 @@ function del()
 	if (response == false)
 		return;
 
-	var str="/cgi-bin/cgi/ngfop/editsch.cgi?action=delete&htmlname=deletecgi.htm&name="+fn;
+	var str="/cgi/ngfop/editsch.cgi?action=delete&htmlname=deletecgi.htm&name="+fn;
 
 	//top.frames[3].location=str;
   // window.open(str);
@@ -305,7 +306,7 @@ function del()
 
    // FM 7/8/8
 	//var str = "/cgi-bin/cgi/ngfop/other2.pl?htmlname=left01frame.htm&name=blank.xml"
-   var str   = "/cgi-bin/cgi/ngfop/left02.pl?htmlname=leftsch.htm";
+   var str   = "/cgi/ngfop/left02.pl?htmlname=leftsch.htm";
 	//top.frames[1].location=str;
    
 	//parent.left.location=str;
@@ -343,7 +344,7 @@ function myPicture()
 {
 //	alert("user supplied picture.\n Go somewhere get a picture and paste it here.\n You can have local pictures this way and or picture from anywhere on the net.");
 
-	src="/cgi-bin/cgi/ngfop/editsch.pl?action=edit&name=blank.xml&htmlname=mypicturecgi.htm";
+	src="/cgi/ngfop/editsch.pl?action=edit&name=blank.xml&htmlname=mypicturecgi.htm";
   //parent.middle.location=src;
   testAjax33(src, $("#middle" ));
 
@@ -366,10 +367,10 @@ function ShowExtra(szExtra)
   var fn = getLeftFN();
   //alert(szExtra+ "\n" +fn);
   template = "&htmlname=" + "template01.htm";
-  var src="/cgi-bin/cgi/ngfop/editsch.pl?name=" + fn + template;
+  var src="/cgi/ngfop/editsch.pl?name=" + fn + template;
 
   if (szExtra === 'email') {
-    src="/cgi-bin/cgi/ngfop/editsch.pl?name=" + fn + template;
+    src="/cgi/ngfop/editsch.pl?name=" + fn + template;
   }
    
   if (szExtra === '*upload Images') {

@@ -1,99 +1,54 @@
-
-
-
 <script type="text/javascript">
 var colorbgnd   = 'black';
 var colorforgnd = '#F5F3E4'; //'#00FFFF';
 
 function OnInit() // no applicable
 {
-alert('editschcgi.htm  OnInit()');
-//alert(document.myformeditsch)
-
-   var xmlfile = document.myformeditsch.name.value;
-   if (xmlfile.toLowerCase() == "Students.xml".toLowerCase())
-   {
-      //alert("editsch.htm::OnInit() xmlfile = " + xmlfile);
-      top.frames[0].location.reload()
-   }
-
-   var SWMs  = document.myformeditsch.SWMs.value;
-   //alert(":OnInit() SWMs["+SWMs+"]");
-
-   var szPic = SWMs.match(/(\((.+?)\))/);
-   
-   // Working On
-   var szMatches = SWMs.match(/w\((.+?)\)/);
-   //alert("szMatches["+szMatches+"]");
-   
-   if (szMatches && szMatches[0] && szMatches[1])
-   {
-      //alert("szMatches[1]["+szMatches[1]+"]");
-      atemp  = szMatches[1].split(/\s*,\s*/);
-      var obj = document.myformeditsch.CW1;
-      for (var iii = 0; iii < atemp.length; iii++)
-      {
-         obj[(atemp[iii])].checked = 1;
-      }   
-   }
-   
-   // Mastered
-   szMatches = SWMs.match(/m\((.+?)\)/);
-   //alert("szMatches["+szMatches+"]");
-    
-   if (szMatches && szMatches[0] && szMatches[1])
-   {
-      //alert("szMatches[1]["+szMatches[1]+"]");
-      atemp  = szMatches[1].split(/\s*,\s*/);
-      var obj = document.myformeditsch.CM2;
-      for (var iii = 0; iii < atemp.length; iii++)
-      {
-         obj[(atemp[iii])].checked = 1;
-      }   
-   }
+   alert('editschcgi.htm  OnInit()');
+   var szPic = ""; //SWMs.match(/(\((.+?)\))/);
 }
 
-function getList(obj)
-{
-   var str = "";
+// function getList(obj)
+// {
+//    var str = "";
       
-   // the case of 0 elements
-   if (obj === undefined)
-      return str;
+//    // the case of 0 elements
+//    if (obj === undefined)
+//       return str;
 
-   if (obj.length === undefined)
-   {
-      return str;
-   }
+//    if (obj.length === undefined)
+//    {
+//       return str;
+//    }
 
-   str = "(";
-   var strMs = "M(";
-   var objM = document.myformeditsch.elements.CM2;
-   for (var iii = 0; iii < obj.length; iii++)
-   {
-      // Clear
-      document.myformeditsch.elements.HCW1[iii].value="";
-      document.myformeditsch.HCM2[iii].value = "";
-      if (obj[iii].checked)
-      {
-         str += iii;
-         str += ",";
-         document.myformeditsch.HCW1[iii].value = '1';
-      }
+//    str = "(";
+//    var strMs = "M(";
+//    var objM = document.myformeditsch.elements.CM2;
+//    for (var iii = 0; iii < obj.length; iii++)
+//    {
+//       // Clear
+//       document.myformeditsch.elements.HCW1[iii].value="";
+//       document.myformeditsch.HCM2[iii].value = "";
+//       if (obj[iii].checked)
+//       {
+//          str += iii;
+//          str += ",";
+//          document.myformeditsch.HCW1[iii].value = '1';
+//       }
       
-      if (objM[iii].checked)
-      {
-         strMs += iii;
-         strMs += ",";
-         document.myformeditsch.HCM2[iii].value = '1';
-      }
-   }
+//       if (objM[iii].checked)
+//       {
+//          strMs += iii;
+//          strMs += ",";
+//          document.myformeditsch.HCM2[iii].value = '1';
+//       }
+//    }
 
-   str += ")";
-   var str2 = str.replace(/,\)/, ")");
+//    str += ")";
+//    var str2 = str.replace(/,\)/, ")");
 
-   return str2;
-}
+//    return str2;
+// }
 
 function newSch(type)
 {
@@ -103,15 +58,11 @@ function newSch(type)
 	}
 	
 	str = "/cgi/ngfop/editsch.cgi?action=edit&name=blank.xml&htmlname=editschcgi22.htm"
-  testAjax33(str, $("#right" ));	 
+    testAjax33(str, $("#right" ));	 
 }
 
 function save2(type)
 {
-   //var obj = top.frames[0].document.myform;
-   //var student = obj.Students.options[obj.Students.selectedIndex].text;
-
-   //parent.frames[1].save2_2(type, document.myform.d0.value, student);
    var student="Jake";
    var desc = document.myformeditschtop.d0.value;   
    alert('top desc333= '+ desc);
@@ -120,19 +71,6 @@ function save2(type)
 
 function save2_2(name, desc, student)
 {
-/**********
-   if (student)
-   {
-      var xmlfile = document.myform.name.value;
-      
-      var obj = document.myform.elements.CW1;
-      var szList = getList(obj);
-      
-      var szData = student + " " + xmlfile;
-      document.myform.student.value = szData;
-   }
-**********/
-   
 	var w_space = String.fromCharCode(32);
 	var bValidName=0;
 
@@ -163,10 +101,7 @@ function save2_2(name, desc, student)
 	document.myformeditsch.d0.value = desc;
 
 	var data = jQuery.param({ action: "save", htmlname : "editschcgi22.htm"})+'&'+ $("form[name=myformeditsch]").serialize();
-	//alert('Form data = <br/>\n' + data);
-	//document.myformeditsch.submit();
-	
-	//<form name="myformeditsch" method="post" //action="/cgi-bin/cgi/ngfop/editsch.cgi?action=save">	
+
 	$.ajax({
       	url: "/cgi/ngfop/editsch.cgi",
     	type: "POST",
@@ -424,7 +359,6 @@ function initializeRows()
    
    var iLen =document.getElementsByName("R1").length;
       
-	//for (var iii = 0; iii < myformeditsch.elements.R1.length; iii++)
    for (var iii = 0; iii < iLen; iii++)
 	{
 		szhRow = document.myformeditsch.HR55[iii].value;
@@ -457,4 +391,3 @@ initializeRows();
 	//document.myformeditschtop.d0.value = desc;
 }
 </script>
-

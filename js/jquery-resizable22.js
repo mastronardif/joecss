@@ -126,7 +126,7 @@ Licensed under MIT License
 
             function doDrag(e) {
                                 // look into this kludge when you can.
-                                console.log(currentSplitter);
+                                //console.log(currentSplitter);
                                 if ($el["0"].id != currentSplitter.substring(1,3)) return;
                                 //if ($el["0"].id != 'F1') return;                                
                                 //
@@ -143,7 +143,7 @@ Licensed under MIT License
                     newHeight = startPos.height + pos.y - startPos.y;
 
                 if (!opt.onDrag || opt.onDrag(e, $el, newWidth, newHeight, opt) !== false) {
-                    console.log('doDrag'+ $el.context.className + ', ' + newWidth );
+                    //console.log('doDrag '+ $el.context.className + ', ' + newWidth );
                     if (opt.resizeHeight)
                         $el.height(newHeight);                    
 
