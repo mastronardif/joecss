@@ -167,7 +167,7 @@ function showMySchedules(id, outDiv)
     str = "/cgi/ngfop/catagory.pl?htmlname=publiccgi.htm";
   }  
   else if (id === 'mypics') {
-    str = "/cgi/ngfop/mypicshtml.cgi?htmlname=mypicscgi.htm";
+    str = "/cgi/ngfop/mypicshtml.cgi?htmlname=./htm/mypicscgi.htm";
   }
 
 	testAjax33(str, outDiv);
@@ -318,36 +318,17 @@ function del()
 
 function myshowMiddle(id, src)
 {
-    //var element = document.getElementById(id);
-    //alert(src);
     if (!src) {return;}
 
     var str = "http://www.joeschedule.com"+ src;   
-
 	  testAjax33(str, $("#middle" ));
-
-
-     //element.classList.toggle("mystyle");
-     //element.classList.toggle("hover-item:hover");
-
-    //   for (i = 1; i < 4; i++) { 
-    //       if (i != id) {         
-    //       element = document.getElementById(i);
-    //      // element.classList.toggle("hover-item:hover");
-    // //      //element.style.cssText ="color: blue; border: 1px solid black";
-    //       element.style.cssText =" background-color: black;";
-    //      }
-    //   }
 }
 
 function myPicture()
 {
-//	alert("user supplied picture.\n Go somewhere get a picture and paste it here.\n You can have local pictures this way and or picture from anywhere on the net.");
-
-	src="/cgi/ngfop/editsch.pl?action=edit&name=blank.xml&htmlname=mypicturecgi.htm";
-  //parent.middle.location=src;
+	//src="/cgi/ngfop/editsch.pl?action=edit&name=blank.xml&htmlname=mypicturecgi.htm";
+	var src="/cgi/ngfop/sch4.pl?action=edit&name=blank.xml&htmlname=mypicturecgi.htm";  
   testAjax33(src, $("#middle" ));
-
 }
 
 // function getEventTarget(e) {

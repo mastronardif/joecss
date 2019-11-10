@@ -24,7 +24,7 @@ Licensed under MIT License
         return;
 
     $.fn.resizable = function fnResizable(options) {
-        console.log(`resizable ${JSON.stringify(options)}`);
+        //console.log(`resizable ${JSON.stringify(options)}`);
         var defaultOptions = {
             // selector for handle that starts dragging
             handleSelector: null,
@@ -62,7 +62,7 @@ Licensed under MIT License
             var $el = $(this);
             var $handle;
 
-            console.log(`resizable $el=  ${this.classList}`);
+            //console.log(`resizable $el=  ${this.classList}`);
 
             if (options === 'destroy') {            
                 opt = $el.data('resizable');
@@ -100,7 +100,7 @@ Licensed under MIT License
                   e.preventDefault();
                 }
                 currentSplitter = e.currentTarget.id;
-                console.log('startDragging currentSplitter='+ currentSplitter);
+                //console.log('startDragging currentSplitter='+ currentSplitter);
                 
                 startPos = getMousePos(e);
                 startPos.width = parseInt($el.width(), 10);
@@ -190,7 +190,7 @@ Licensed under MIT License
             }
 
             function getHandle(selector, $el) {
-                console.log('getHandle ' + selector + $el.context.className);
+                //console.log('getHandle ' + selector + $el.context.className);
 
                 if (selector && selector.trim()[0] === ">") {
                     selector = selector.trim().replace(/^>\s*/, "");

@@ -19,6 +19,8 @@ use strict 'vars';
 use LWP::Simple;
 use HTML::TokeParser;
 
+my $query = new CGI;
+my $html        = $query->param('htmlname') || "./lwpyahoocgi.htm";
 
 print "Content-type: text/html\n\n";
 
@@ -39,7 +41,11 @@ my $direcrtory = $session{dir};
 #HTTP_HOST = www.joeschedule.com
 #REQUEST_URI = /cgi-bin/cgi/ngfop/mypicshtml.cgi
 my $uri = $ENV{REQUEST_URI} || 'wtf';
+## fm 6/30/20 fix this
+$uri =~ s/\?.*//;
+
 $uri =~ s|[^/]+$||; # remove  stuff after last slash
+
 #print "\n uri= $uri\n";
 
 substr($direcrtory,0,2)=""; # remove the ./ from ./members/__
@@ -50,8 +56,6 @@ my $root = "http://$ENV{HTTP_HOST}$uri$direcrtory";
 #exit(0);
 
 
-my $query = new CGI;
-my $html        = $query->param('htmlname') || "./lwpyahoocgi.htm";
 
 my @yahooimgs;
 
@@ -169,7 +173,7 @@ close(MSG);
       }
    }
 
-  print @images;
+  ##print @images;
    
 sub decorate()
 {
