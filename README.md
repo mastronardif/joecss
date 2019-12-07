@@ -5,6 +5,7 @@ Joeschedule css
 
 A joeschedule version 2.0: https, css grids, nodejs.
 Replaced: Perl, html framesets, and removed some functionality that was comlicted and not used much.
+hell even introducing some python
 
 
 
