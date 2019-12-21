@@ -110,7 +110,7 @@ sub SCHDB_UserInfo()
    my $retval = "";
    
    # 12/20/19 Begin     
-   return "$id";  
+   return "$id"  
    # 12/20/19 Begin
 
 #FM 12/20/19 begin

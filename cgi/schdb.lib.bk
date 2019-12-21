@@ -7,7 +7,7 @@
 ####################################
 ####################################
 use DBI;
-# fm 12/20/19 use Authen::Users;
+use Authen::Users;
 use strict "vars";
 use File::Find();
 
@@ -33,98 +33,63 @@ sub SCHDB_DoesIDExists()
 
 #=cut
    
-#FM 12/20/19 begin
-=comment
-   my $authen = new Authen::Users(dbtype => 'MySQL', dbhost => 'www3.pairlite.com', dbname => 'pl1321_dbjs',  
-                              dbuser => 'pl1321_w', dbpass => 'Fm123456', dbname =>'pl1321_dbjs', create => 0);
+   my $authen = new Authen::Users(dbtype => 'MySQL', dbhost => 'db3b.pair.com', dbname => 'mastronf_dbjs',  
+                              dbuser => 'mastronf_w', dbpass => 'RwUj3jx3', dbname =>'mastronf_dbjs', create => 0);
 
    return $authen->is_in_table($GROUP, $id);
-=cut   
-#FM 12/20/19 end   
 }
 
 sub  SCHDB_Adduser()
 {
    my($id, $pw, $fullname, $email) = @_;
- 
-=comment
-#FM 12/20/19 begin    
- # FM 2/23/19 https://metacpan.org/pod/Authen::Users    NO_SALT => 1 
-   my $authen = new Authen::Users(dbtype => 'MySQL', dbhost => 'www3.pairlite.com', dbname => 'pl1321_dbjs',  
-                               NO_SALT => 1, dbuser => 'pl1321_w', dbpass => 'Fm123456', dbname =>'pl1321_dbjs', create => 0);
+   
+   my $authen = new Authen::Users(dbtype => 'MySQL', dbhost => 'db3b.pair.com', dbname => 'mastronf_dbjs',  
+                              dbuser => 'mastronf_w', dbpass => 'RwUj3jx3', dbname =>'mastronf_dbjs', create => 0);
    $authen->add_user($GROUP, $id, $pw, $fullname, $email, "", "") or return $authen->error;                               
-=cut   
-#FM 12/20/19 end      
+   
    return "";
 }
 
-sub SCHDB_Validate()
-{
-    #SCHDB_Validate(id, pw)
-    my($id, $pw) = @_;
-   
-	my $href = &SCHDB_UserInfo($id);
-	return $href;
-	  
-# Fm 12/20/19 begin 
-=comment
-	my $fullname = $href->{fullname};
-	my @array1 = split /\s+/, $fullname;
-	my $pwDB = @array1[0];
-	  
-	if ($pw eq $pwDB) 
-	{
-		return $href->{dir};
-	}
-      
-   return 0;
-=cut
-# Fm 12/20/19 end
-}
-
-# Fm 12/20/19 begin
-=comment
-sub  SCHDB_Validate00()
+sub  SCHDB_Validate()
 {
    #SCHDB_Validate(id, pw)
    my($id, $pw) = @_;
-   my $authen = new Authen::Users(dbtype => 'MySQL', dbhost => 'www3.pairlite.com', dbname => 'pl1321_dbjs',  
-                              dbuser => 'pl1321_w', dbpass => 'Fm123456', dbname =>'pl1321_dbjs', create => 0);
+   my $authen = new Authen::Users(dbtype => 'MySQL', dbhost => 'db3b.pair.com', dbname => 'mastronf_dbjs',  
+                              dbuser => 'mastronf_w', dbpass => 'RwUj3jx3', dbname =>'mastronf_dbjs', create => 0);
   
    # FM 1/20/9 return $authen->authenticate($GROUP, $id, $pw);
    if ($authen->authenticate($GROUP, $id, $pw))
    {
       my $href = &SCHDB_UserInfo($id);
 
+#FM 2/1/09
+=comment
+if ($href)  # for Testing.
+{
+   if ($GROUP =~ /s1FMTESTING/)
+
+   {
+	return "100002";
+   }
+}
+=cut
       return $href->{dir};
    }
    return 0;
 }
-=cut
-# Fm 12/20/19 end
 
 sub SCHDB_UserInfo()
 {
    ## $userinfo = &SCHDB_UserInfo($id);
    my($id) = @_;
    my $retval = "";
-   
-   # 12/20/19 Begin     
-   return "$id";  
-   # 12/20/19 Begin
-
-#FM 12/20/19 begin
-=comment
-	
-   my $authen = new Authen::Users(dbtype => 'MySQL', dbhost => 'www3.pairlite.com', dbname => 'pl1321_dbjs',                                   dbuser => 'pl1321_w', dbpass => 'Fm123456', dbname =>'pl1321_dbjs', create => 0);
+   my $authen = new Authen::Users(dbtype => 'MySQL', dbhost => 'db3b.pair.com', dbname => 'mastronf_dbjs',  
+                                  dbuser => 'mastronf_w', dbpass => 'RwUj3jx3', dbname =>'mastronf_dbjs', create => 0);
                         
    my $href;
    $href = $authen->user_info_hashref($GROUP, $id) or return $authen->errstr;
    #print "die Cannot retrieve information about $user in group $GROUP:$authen->errstr";
    return $href;
-=cut   
-#FM 12/20/19 end      
-   
 }
 
 sub SCHDB_Mail_ReplyFor()
@@ -133,7 +98,7 @@ sub SCHDB_Mail_ReplyFor()
    delete @ENV{qw(PATH IFS CDPATH ENV BASH_ENV)};   # Make %ENV safer
 
    #sub SCHDB_Mail($template, $id)
-   my($id, $pw) = @_;
+   my($id) = @_;
 
    my $href = &SCHDB_UserInfo($id);
    if (!$href->{user})
@@ -161,7 +126,6 @@ END
 
    $msg =~ s/<fullname\/>/$href->{fullname}/igs;
    $msg =~ s/<id\/>/$href->{user}/igs;
-   $msg =~ s/<pw\/>/$pw/igs;
    $msg =~ s/<email\/>/$href->{email}/igs;
    $msg =~ s/<dir\/>/$href->{dir}/igs;
 
@@ -214,7 +178,6 @@ case you forget it. Please print and keep this information in a safe place for f
 
 <p align="left">
    JoescheduleID: <b><ID/></b>
-   <br/>      PW: <b><PW/></b>
    <br/> Email address: <b><EMAIL/></b>
 </p>
 
