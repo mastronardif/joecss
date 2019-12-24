@@ -222,7 +222,7 @@ print <<"END";
 //redirTime = "15000";
 redirTime = "0";
 //FM 2/23/19 redirURL = "$root";
-redirURL = "$root/indexcgi.htm";
+redirURL = "$root/index.html";
 function redirTimer() { self.setTimeout("self.location.href = redirURL;",redirTime); }
 
 //alert("$root")
